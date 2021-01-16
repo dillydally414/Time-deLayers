@@ -92,7 +92,7 @@ function getTimeFoamEffect() {
 }
 
 function getTempCompBase() {
-  return EN(2).add(stinc(12)?(stinc(15)?caplog10square(game.spaceComp):game.spaceComp.min(12)).times(0.015):0).add(game.achievement.includes(28)?0.19:0)
+  return EN(2).pow(game.tempComp.pow(1.5)).add(stinc(12)?(stinc(15)?caplog10square(game.spaceComp):game.spaceComp.min(12)).times(0.015):0).add(game.achievement.includes(28)?0.19:0)
 }
 
 function caplog10square(x) {
