@@ -84,7 +84,7 @@ function getTempCompEffect() {
 }
 
 function getTimeFoamEffect() {
-  return (10.minus(game.timeFoam.sqrt())).min(-1)
+  return game.timeFoam.sqrt()
 }
 
 function getTempCompBase() {
