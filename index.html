@@ -111,12 +111,12 @@
                 </td>
                 <td>
                 You have <span class="blur">{{game.timeFoam.beautify(2)}}</span>   seconds of time foam<br>
-                You are getting {{timeFoamSpeed}} time foam per second
+                You are getting {{timeFoamSpeed}} time foam per second<br>
+                  Your Time Foam divides Time Foam production by {{timeFoamEffect}}
                   <button class="layer1 squareMediumButton" style="margin-top: 30px;margin-bottom:20px" onclick="buyTempComp()">Perform a Temporal Compression<br><br>Cost: {{tempCompCost}}</button>
                   <div v-if="game.tempComp.gte(1)||game.highestReset>=1">
                 Each temporal compression compresses time by {{timeCompBase}}%<br>
-                    Your {{game.tempComp.beautify()}} temporal compression compresses time by {{tempCompEffect}}x<div v-if="game.tempComp.gte(10)">Your temporal compressors is softcapped to {{game.tempComp.log10().times(10).min(15).beautify(2)}}<br>
-                    Your Time Foam divides Time Foam production by {{timeFoamEffect}}</div>
+                    Your {{game.tempComp.beautify()}} temporal compression compresses time by {{tempCompEffect}}x<div v-if="game.tempComp.gte(10)">Your temporal compressors is softcapped to {{game.tempComp.log10().times(10).min(15).beautify(2)}}</div>
                   <table style="width: 370;margin:auto">
                     <tr>
                       <td><button v-bind:class="row1SpaceTimeUpgrade[2][0]" onclick="buySpaceTimeUpgrade(3,1)">Unlock Space Foam<br><br>Cost: 200 time</button></td>
