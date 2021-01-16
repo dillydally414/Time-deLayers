@@ -84,7 +84,10 @@ function getTempCompEffect() {
 }
 
 function getTimeFoamEffect() {
-  return game.timeFoam.pow(2)
+  if (game.timeFoam.gte(1) {
+      return game.timeFoam.pow(2)
+  }
+  return 1
 }
 
 function getTempCompBase() {
