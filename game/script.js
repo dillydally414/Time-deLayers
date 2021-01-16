@@ -164,7 +164,7 @@ function loop(ms) {
   game.timeFoam = game.timeFoam.add(s.times(getTempCompEffect())).add(getTimeFoamEffect())
   app.$data.tempCompCost = getTempCompCost().beautify(2)
   app.$data.tempCompEffect = getTempCompEffect().beautify(2)
-  app.$data.timeFoamSpeed=getTempCompEffect().add(getTimeFoamEffect()).beautify(2)
+  app.$data.timeFoamSpeed=s.times(getTempCompEffect()).add(getTimeFoamEffect()).beautify(2)
   
   for (let i in app.$data.row1SpaceTimeUpgrade) {
     for (let j in app.$data.row1SpaceTimeUpgrade[i]) {
