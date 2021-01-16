@@ -80,11 +80,11 @@ function buyTempComp() {
 }
 
 function getTempCompEffect() {
-  return getTempCompBase().pow(caplog10(game.tempComp).min(15).add(caplog10(getSpacetimeCompEffect())).add(inAnyGalChal()?0:game.superComp.temp)).div(game.timeFoam.pow(2))
+  return getTempCompBase().pow(caplog10(game.tempComp).min(15).add(caplog10(getSpacetimeCompEffect())).add(inAnyGalChal()?0:game.superComp.temp))
 }
 
 function getTimeFoamEffect() {
-  return 0
+  return 1.div(game.timeFoam.pow(2))
 }
 
 function getTempCompBase() {
