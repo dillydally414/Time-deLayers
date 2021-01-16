@@ -41,6 +41,7 @@ function getSpaceTimeRate() {
     .times(starMile(16)&&game.spaceless&&inGalChal(1)?1e55:1)
     .times(game.perspectivePower.max(1))
     .times(getSuperNovaEffect(2))
+    .times(.1)
 }
 
 function getSpaceTimeCost() {
