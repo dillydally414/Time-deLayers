@@ -111,7 +111,7 @@
                 </td>
                 <td>
                 You have <span class="blur">{{game.timeFoam.beautify(2)}}</span>   seconds of time foam<br>
-                Your Time Foam divides Time Foam production by {{getTimeFoamEffect().beautify(2)}}<br>
+                Your Time Foam divides Time Foam production by {{game.timeFoamEffect.beautify(2)}}<br>
                 You are getting {{$data.timeFoamSpeed}} time foam per second
                   <button class="layer1 squareMediumButton" style="margin-top: 30px;margin-bottom:20px" onclick="buyTempComp()">Perform a Temporal Compression<br><br>Cost: {{tempCompCost}}</button>
                   <div v-if="game.tempComp.gte(1)||game.highestReset>=1">
