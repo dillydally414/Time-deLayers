@@ -1,6 +1,6 @@
 "use strict"
 
-const SPACETIME_UPGRADE_COST = [[2,1.25,1.5,10,15,45,240,600,NaN],[2e6,20000,NaN,11,14,16,"e1050","e10500",NaN],[200,500,5000,10,20,NaN,NaN,NaN,NaN]]
+const SPACETIME_UPGRADE_COST = [[2,1.25,1.5,10,15,45,240,600,NaN],[2e6,20000,NaN,11,14,16,"e1050","e10500",NaN],[2000,5000,50000,10,20,NaN,NaN,NaN,NaN]]
 
 function stinc(x,thing=false) {
   if (game.spaceless&&(!thing)&&x!==1&&x<=9) return false
