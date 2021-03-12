@@ -42,7 +42,7 @@ function newVue() {
       row2NEU: ["","","",""],
       getTempCompBase: getTempCompBase,
       starMile: starMile,
-      row4PEU: ["","","","","","","","","","","","","","","",""],
+      row4PEU: ["","upgradeButton bought","","","","","","","","","","","","","",""],
       getSpacetimeCompEffect: getSpacetimeCompEffect,
       getSuperNovaEffect: getSuperNovaEffect,
       row4Supercomp: [["","","","","","","","",""],["","","","","","","","",""],["","","","","","","","",""]],

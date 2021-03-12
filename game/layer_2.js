@@ -1,6 +1,6 @@
 "use strict"
 
-const SPACE_ENERGY_UPGRADE_COST = [1,5,100,1000,1e5,1e10,1e15,1e25,1e50,1e100,1e200,"1e1000"]
+const SPACE_ENERGY_UPGRADE_COST = [1,5,50,500,5000,5e6,5e7,5e12,1e50,1e100,1e200,"1e1000"]
 const NUCLEO_UPGRADE_COST = [9e12,6e14,1e17,NaN]
 const NORMAL_ENERGY_UPGRADE_COST = [1e8, 5, 100, 1000]
 
@@ -27,10 +27,10 @@ function buyNEU(x) {
 }
 
 function getNucleoLength() {
-  return game.nucleoTime.max(120).min(EN(1200).times(game.SEU.includes(3)?getSpaceEnergyTimeMult():1).times(stinc(37)?getTempCompBase():1)).minus(120)
+  return game.nucleoTime.max(1800).min(EN(18000).times(game.SEU.includes(3)?getSpaceEnergyTimeMult():1).times(stinc(37)?getTempCompBase():1)).minus(1800)
     .pow(1+0.5*game.SEU.includes(6))
     .pow(1+game.SEU.includes(10))
-    .div(1000)
+    .div(15000)
     .minus(game.PEU.includes(3)?0:game.spentNucleo)
 }
 

@@ -1,6 +1,6 @@
 "use strict"
 
-const SPACETIME_UPGRADE_COST = [[2,1.25,1.5,10,15,45,240,600,NaN],[2e6,20000,NaN,11,14,16,"e1050","e10500",NaN],[200,500,5000,10,20,NaN,NaN,NaN,NaN]]
+const SPACETIME_UPGRADE_COST = [[2,1.25,1.5,10,13,45,240,600,NaN],[2e5,5000,NaN,9,13,16,"e1050","e10500",NaN],[200,500,5000,11,20,NaN,NaN,NaN,NaN]]
 
 function stinc(x,thing=false) {
   if (game.spaceless&&(!thing)&&x!==1&&x<=9) return false
@@ -31,7 +31,7 @@ function getSpaceCompCost(bulk=1) {
 
 
 function getSpaceTimeRate() {
-  return getTempCompEffect().times(game.spaceFoam).times(1+stinc(33)).times(stinc(13)?getSpaceEnergyRow1Mult():1)
+  return (game.timeFoamSpeed).times(game.spaceFoam).times(1+stinc(33)).times(stinc(13)?getSpaceEnergyRow1Mult():1)
     .times(game.achievement.includes(16)?10:1)
     .times(stinc(27)?1e50:1)
     .times(game.nucleoUps.includes(2)?getNucleoEffect(2):1)
@@ -41,6 +41,7 @@ function getSpaceTimeRate() {
     .times(starMile(16)&&game.spaceless&&inGalChal(1)?1e55:1)
     .times(game.perspectivePower.max(1))
     .times(getSuperNovaEffect(2))
+    .div(game.spacetime.pow(1.1).add(EN(1)))
 }
 
 function getSpaceTimeCost() {
@@ -57,8 +58,8 @@ function buySpaceTimeComp() {
 
 function getSpacetimeCompEffect() {
   return game.spacetimeComp
-    .times(stinc(22)?EN(1).add(EN(0.015).times(1+stinc(25)*(1+stinc(28))).times(game.spacetimeComp)):1)
-    .times(game.achievement.includes(28)?1.19:1)
+    .times(stinc(22)?EN(1).add(EN(.1).times(1+stinc(25)*(1+stinc(28))).times(game.spacetimeComp)):1)
+    .times(game.achievement.includes(28)?1.16:1)
 }
 
 function caplog10(x) {
@@ -85,14 +86,14 @@ function getTempCompEffect() {
 
 function getTimeFoamEffect() {
   if (game.timeFoam.gte(1)) {
-      return game.timeFoam.pow(EN(1.1).div(game.tempComp.add(1)))
+      return game.timeFoam.pow(EN(1.1).div((game.tempComp.add(1)).pow(0.25)))
   } else {
   return 1
   }
 }
 
 function getTempCompBase() {
-  return EN(2).add(stinc(12)?(stinc(15)?caplog10square(game.spaceComp):game.spaceComp.min(12)).times(0.015):0).add(game.achievement.includes(28)?0.19:0)
+  return EN(2).add(stinc(12)?(stinc(15)?caplog10square(game.spaceComp):game.spaceComp.min(12)).times(0.015):0).add(game.achievement.includes(28)?0.16:0)
 }
 
 function caplog10square(x) {
@@ -117,6 +118,7 @@ function getSpaceCompBase() {
     .times(getSuperNovaEffect(1))
   
 }
+
 
 function canBuySpaceTimeUpgrade(x,y) {
   if (game.spaceTimeFoamUpgrade.includes(x+""+y)) return false

@@ -11,7 +11,7 @@ const achieveData = [
       () => game.spaceFoam.gte(256)&&game.timeFoam.gte(65536)&&game.spacetime.gte(256**3),
       () => game.spaceFoam.gte(1e3),
       () => game.spaceEnergy.gte(3),
-      () => game.tempComp.eq(9)&&game.spaceComp.eq(9)&&game.spacetimeComp.eq(9),
+      () => game.tempComp.eq(8)&&game.spaceComp.eq(8)&&game.spacetimeComp.eq(8),
     ],
     name: [
       "Tick Tock Aarex's Clock",
@@ -21,7 +21,7 @@ const achieveData = [
       "Computer Byte Master",
       "SI units finally",
       "All of your upgrades belong to us",
-      "NEIN NEIN NEIN",
+      "(Y)ACHT (Y)ACHT (Y)ACHT",
     ],
     tooltip: [
       "Have a 1 second old universe",
@@ -31,7 +31,7 @@ const achieveData = [
       "Have 256m of space, 65536s of time, and 1677716 m*s of spacetime",
       "Reach a kilometer of space foam REWARD: Gain 10x more spacetime foam",
       "Buy all of the row 1 upgrades REWARD: Unlock the second row of upgrades",
-      "Have exactly 9 of each compressor REWARD: Boost Spatial Compressor by 9%",
+      "Have exactly 8 of each compressor REWARD: Boost Spatial Compressor by 8%",
     ]
   },
   {
@@ -44,7 +44,7 @@ const achieveData = [
       () => game.spaceEnergy.gte(4e69),
       () => getNucleoLength().gte(3e12),
       () => starMile(6),
-      () => game.spacetimeComp.eq(19)&&game.tempComp.eq(19),
+      () => game.spaceComp.eq(16),
     ],
     name: [
       "Four Minute Mile",
@@ -54,7 +54,7 @@ const achieveData = [
       "Hevi-er than the Observable Universe",
       "A Supergiant Star",
       "Even more upgrades belong to us",
-      "NEIN TIEN NEIN TIEN",
+      "Sweet",
     ],
     tooltip: [
       "Have 1,609 meters of space with under 4 minutes of nucleosynthesis",
@@ -64,7 +64,7 @@ const achieveData = [
       "Have 4e69 (nice) Joule of Space Energy",
       "Reach 3e15 mm of deuterium nuclei REWARD: Nucleosynthesis boosts Space Energy gain",
       "Buy all of the row 2 upgrades REWARD: Unlock the third row and nucleosynthesis upgrades",
-      "Have exactly 19 Spacetime and Temporal Compressors REWARD: These compressors are 19% stronger",
+      "Have exactly 16 Space Compressors REWARD: Spacetime and Time compressors are 16% stronger",
     ]
   },
   {

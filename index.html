@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Timewall Layers</title>
+    <link rel="icon" href="https://static.thenounproject.com/png/668404-200.png">
+    <title>Time deLayers</title>
     
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -75,7 +75,7 @@
                     </tr>
                     <tr v-if="game.achievement.includes(17)">
                       <td><button v-bind:class="row1SpaceTimeUpgrade[0][3]" onclick="buySpaceTimeUpgrade(1,4)">Each "space" or "time" makes compressors 2.25x cheaper<br>Cost: 10 compressors</button></td>
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[0][4]" onclick="buySpaceTimeUpgrade(1,5)">The upgrade above uses a better formula past 12 compressors<br>Cost: 15 compressors</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[0][4]" onclick="buySpaceTimeUpgrade(1,5)">The upgrade above uses a better formula past 12 compressors<br>Cost: 13 compressors</button></td>
                       <td><button v-bind:class="row1SpaceTimeUpgrade[0][5]" onclick="buySpaceTimeUpgrade(1,6)">The square root of time foam multiplies space foam<br>Cost: 45 compressors</button></td>
                     </tr>
                     <tr v-if="game.achievement.includes(27)">
@@ -93,13 +93,13 @@
                   {{spacetime.effect.gte(10)?spacetime.effect.log10().times(10).beautify(2):spacetime.effect.beautify(2)}} free temporal compressors
                   <table style="width: 370;margin:auto">
                     <tr>
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][0]" onclick="buySpaceTimeUpgrade(2,1)">Unlock the next layer (Scroll Down)<br><br>Cost: 2e6 spacetime</button></td>
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][1]" onclick="buySpaceTimeUpgrade(2,2)">Spacetime compressors boost themselves (+1.5% each)<br>Cost: 20,000 spacetime</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][0]" onclick="buySpaceTimeUpgrade(2,1)">Unlock the next layer (Scroll Down)<br><br>Cost: 200,000 spacetime</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][1]" onclick="buySpaceTimeUpgrade(2,2)">Spacetime compressors boost themselves (+1.5% each)<br>Cost: 5,000 spacetime</button></td>
                       <td><button v-bind:class="row1SpaceTimeUpgrade[1][2]" onclick="buySpaceTimeUpgrade(2,3)">Space Compression is 3x cheaper<br>Cost: Out of Stock</button></td>
                     </tr>
                     <tr v-if="game.achievement.includes(17)">
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][3]" onclick="buySpaceTimeUpgrade(2,4)">Joule directly multiplies Space Gain<br><br>Cost: 11 compressors</button></td>
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][4]" onclick="buySpaceTimeUpgrade(2,5)">Double the upgrade above this<br>Cost: 14 compressors</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][3]" onclick="buySpaceTimeUpgrade(2,4)">Joule directly multiplies Space Gain<br><br>Cost: 9 compressors</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[1][4]" onclick="buySpaceTimeUpgrade(2,5)">Double the upgrade above this<br>Cost: 13 compressors</button></td>
                       <td><button v-bind:class="row1SpaceTimeUpgrade[1][5]" onclick="buySpaceTimeUpgrade(2,6)">The logarithm of spacetime foam adds to Space Compressors % effect<br>Cost: 16 compressors</button></td>
                     </tr>
                     <tr v-if="game.achievement.includes(27)">
@@ -111,8 +111,7 @@
                 </td>
                 <td>
                 You have <span class="blur">{{game.timeFoam.beautify(2)}}</span>   seconds of time foam<br>
-                Your Time Foam divides Time Foam production by {{game.timeFoamEffect.beautify(2)}}<br>
-                You are getting {{$data.timeFoamSpeed}} time foam per second
+                You are getting {{game.timeFoamSpeed.beautify(2)}} time foam per second
                   <button class="layer1 squareMediumButton" style="margin-top: 30px;margin-bottom:20px" onclick="buyTempComp()">Perform a Temporal Compression<br><br>Cost: {{tempCompCost}}</button>
                   <div v-if="game.tempComp.gte(1)||game.highestReset>=1">
                 Each temporal compression compresses time by {{timeCompBase}}%<br>
@@ -124,8 +123,8 @@
                       <td><button v-bind:class="row1SpaceTimeUpgrade[2][2]" onclick="buySpaceTimeUpgrade(3,3)">Double the previous upgrade & spacetime gain<br>Cost: 5,000 time</button></td>
                     </tr>
                     <tr v-if="game.achievement.includes(17)">
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[2][3]" onclick="buySpaceTimeUpgrade(3,4)">Multiply Joule gain by the amount of owned Row 2 upgrades<br>Cost: 10 compressors</button></td>
-                      <td><button v-bind:class="row1SpaceTimeUpgrade[2][4]" onclick="buySpaceTimeUpgrade(3,5)">Unlock the next layer<br><br>Cost: 20 compressors</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[2][3]" onclick="buySpaceTimeUpgrade(3,4)">Multiply Joule gain by the amount of owned Row 2 upgrades<br>Cost: 11 compressors</button></td>
+                      <td><button v-bind:class="row1SpaceTimeUpgrade[2][4]" onclick="buySpaceTimeUpgrade(3,5)">Unlock the next layer <br><br>Cost: 20 compressors</button></td>
                       <td><button v-bind:class="row1SpaceTimeUpgrade[2][5]" onclick="buySpaceTimeUpgrade(3,6)">Gain 100% of Space Energy gained on reset per second<br>Cost: Out of Stock</button></td>
                     </tr>
                     <tr v-if="game.achievement.includes(27)">
@@ -140,7 +139,7 @@
           </div>
           <div v-if="layersubtab[0] == 2">
             Your Nucleosynthesis Age is <span class="blur">{{game.nucleoTime.toTime()}}</span><br>
-            Nucleosynthesis of Deuterium Nuclei occurs between 2m and {{(EN(1200).times(game.SEU.includes(3)?spaceEnergyTimeMult():1).times(game.stinc(37)?getTempCompBase():1)).toTime()}}
+            Nucleosynthesis of Deuterium Nuclei occurs between 30m and {{(EN(18000).times(game.SEU.includes(3)?spaceEnergyTimeMult():1).times(game.stinc(37)?getTempCompBase():1)).toTime()}}
             <br><br>
             You have <span class="blur">{{nucleoLength().times(1000).beautify(2)}}</span>   mm of deuterium nuclei
             <br>This adds to your base Space Foam to make it longer
@@ -168,19 +167,19 @@
           You have <span class="blur">{{game.spaceEnergy.beautify()}}</span>   Joule of space energy
           <br>This gives you the first {{game.spaceEnergy.min(3).beautify()}} spacetime upgrades for free {{game.SEU.includes(4)?"and also makes the third upgrade in each Row 1 set " + spaceEnergyRow1Mult().minus(1).times(100).beautify(2) + "% stronger":""}}
           <br>It also multiplies the above layer speed {{game.SEU.includes(3)?"and the nucleosynthesis cap ":""}}by {{spaceEnergyTimeMult().beautify(2)}}
-            <button class="squareMediumButton layer2" style="margin-top:30px;margin-bottom:30px" onclick="if(canPrestige(1)){reset(1);game.spaceless=false}">{{!canPrestige(1)?"Reach 1,000,000 Spacetime to prestige!":"Reset for " + getPrestige(1).beautify() + (game.spaceless?" Normal Energy":" Space Energy")}}</button>
+            <button class="squareMediumButton layer2" style="margin-top:30px;margin-bottom:30px" onclick="if(canPrestige(1)){reset(1);game.spaceless=false}">{{!canPrestige(1)?"Reach 300,000 Spacetime to prestige!":"Reset for " + getPrestige(1).beautify() + (game.spaceless?" Normal Energy":" Space Energy")}}</button>
           <table style="width: 370px;margin:auto">
                     <tr>
                       <td><button v-bind:class="row2SEU[0]" onclick="buySEU(1)">Unlock Nucleosynthesis<br><br>Cost: 1 SE</button></td>
                       <td><button v-bind:class="row2SEU[1]" onclick="buySEU(2)">Keep all bought upgrades upon reset<br>Cost: 5 SE</button></td>
-                      <td><button v-bind:class="row2SEU[2]" onclick="buySEU(3)">Excess space energy boosts time and nucleosynthesis<br>Cost: 100 SE</button></td>
-                      <td><button v-bind:class="row2SEU[3]" onclick="buySEU(4)">Excess space energy boosts the third upgrade in each Row 1 set<br>Cost: 1,000 SE</button></td>
+                      <td><button v-bind:class="row2SEU[2]" onclick="buySEU(3)">Excess space energy boosts time and nucleosynthesis<br>Cost: 50 SE</button></td>
+                      <td><button v-bind:class="row2SEU[3]" onclick="buySEU(4)">Excess space energy boosts the third upgrade in each Row 1 set<br>Cost: 500 SE</button></td>
                     </tr>
                     <tr>
-                      <td><button v-bind:class="row2SEU[4]" onclick="buySEU(5)">Improve Space Energy Formula and unlock Automation<br>(x^1/6 → x^1/5)<br>Cost: 1e5 SE</button></td>
-                      <td><button v-bind:class="row2SEU[5]" onclick="buySEU(6)">Nucleosynthesis is raised to the ^1.5 and is twice as fast<br>Cost: 1e10 SE</button></td>
-                      <td><button v-bind:class="row2SEU[6]" onclick="buySEU(7)">The upgrade above is 3x as powerful<br>Cost: 1e15 SE</button></td>
-                      <td><button v-bind:class="row2SEU[7]" onclick="buySEU(8)">The upgrade above is 2x as powerful<br>Cost: 1e25 SE</button></td>
+                      <td><button v-bind:class="row2SEU[4]" onclick="buySEU(5)">Improve Space Energy Formula and unlock Automation<br>(x^1/6 → x^1/5)<br>Cost: 5,000 SE</button></td>
+                      <td><button v-bind:class="row2SEU[5]" onclick="buySEU(6)">Nucleosynthesis is raised to the ^1.5 and is twice as fast<br>Cost: 5e6 SE</button></td>
+                      <td><button v-bind:class="row2SEU[6]" onclick="buySEU(7)">The upgrade above is 3x as powerful (Get at least 5.5e7 SE before purchasing)<br>Cost: 5e7 SE</button></td>
+                      <td><button v-bind:class="row2SEU[7]" onclick="buySEU(8)">The upgrade above is 2x as powerful<br>Cost: 5e12 SE</button></td>
                     </tr>
                     <tr>
                       <td><button v-bind:class="row2SEU[8]" onclick="buySEU(9)">The fourth Space Foam Upgrade is 10x better<br>Cost: 1e50 SE</button></td>
@@ -372,7 +371,7 @@
             
           </div>
         </div>
-        <button class="long layer6 layerbutton" v-if="false">Remnent Layer</button>
+        <button class="long layer6 layerbutton" v-if="false">Remnant Layer</button>
         <button class="long layer7 layerbutton" v-if="false">Degenerate Layer</button>
         <button class="long layer8 layerbutton" v-if="false">Entropy Layer</button>
         <button class="long layer9 layerbutton" v-if="false">Black Hole Layer</button>
@@ -388,8 +387,8 @@
             $.notify('Import successful!','success')}">Import</button>
         <button onclick="
                         let deathPrompt = '';
-                        deathPrompt = prompt('Are you sure you want to reset your game? Type in the phrase \'Timewall Layers was the worst mod I ever played\' if you want to reset your entire game.')
-                        if (deathPrompt == 'Timewall Layers was the worst mod I ever played') {
+                        deathPrompt = prompt('Are you sure you want to reset your game? Type in the phrase \'Time deLayers was the worst mod I ever played\' if you want to reset your entire game.')
+                        if (deathPrompt == 'Time deLayers was the worst mod I ever played') {
                            reset(Infinity);
                            $.notify('Hard Reset Sucessful!','success')
                          }
@@ -397,7 +396,7 @@
                          ">Ultimate Hard Reset</button>
         <button onclick="toggle('layerDisplay')">Layer Display Method: {{game.toggle.layerDisplay?'Stacked':'Tabs'}}</button>
         <button onclick="toggle('autoscroll')">Autoscroll upon switching layer tabs: {{onOff('autoscroll')}}</button>
-        <p>The game is autosaved every 10 seconds. Tip: By clicking a layer tab twice in the Stacked display will collapse that layer, revealing the entire set of layers. You can also change the layer display method to tabs, although this is uglier.</p>
+        <p>The game is autosaved every 10 seconds. Tip: By clicking a layer tab twice in the Stacked display will collapse that layer, revealing the entire set of layers. You can also change the layer display method to tabs, although this is prettier.</p>
         <p><a href="https://discord.gg/RerPeNA">Join the Discord</a></p>
         <p>Mod created by dscott414 aka dillydally#0477.</p>
       </div>
