@@ -1,7 +1,7 @@
 "use strict"
 
 function save() {
-  localStorage.setItem('timeLayerSave', JSON.stringify(game))
+  localStorage.setItem('timeDeLayerSave', JSON.stringify(game))
 }
 
 function load(saveData) {

@@ -11,12 +11,10 @@ let app
 game = newGame()
 app = newVue() // no data yet
 app.$data.tab = 1
-load(JSON.parse(localStorage.getItem("timeLayerSave")))
+load(JSON.parse(localStorage.getItem("timeDeLayerSave")))
 
 window.setInterval(function() {
-  let now=Date.now()
-  loop(now-game.lastTick)
-  game.lastTick=now
+  loop(50)
 }, 50)
 
 window.setInterval(function() {
@@ -165,7 +163,7 @@ function loop(ms) {
   app.$data.tempCompCost = getTempCompCost().beautify(2)
   game.timeFoamEffect = getTimeFoamEffect()
   app.$data.tempCompEffect = getTempCompEffect().beautify(2)
-  app.$data.timeFoamSpeed=getTempCompEffect().div(getTimeFoamEffect()).beautify(2)
+  game.timeFoamSpeed=getTempCompEffect().div(getTimeFoamEffect())
   
   for (let i in app.$data.row1SpaceTimeUpgrade) {
     for (let j in app.$data.row1SpaceTimeUpgrade[i]) {

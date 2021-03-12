@@ -28,7 +28,7 @@ function newGame() {
     timeInL3R: EN(0),
     perspectivePoint: EN(0),
     perspectivePower: EN(0),
-    PEU: [],
+    PEU: [2],
     supernova: [EN(0),EN(0),EN(0),EN(0)],
     bestStarTypes: EN(0),
     superComp: {
